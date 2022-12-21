@@ -46,3 +46,7 @@ small {
     opacity: 0;
   }
 }
+
+.red {
+  color: red;
+}

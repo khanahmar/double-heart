@@ -6,7 +6,6 @@ let clickTime = 0;
 loveMe.addEventListener("click", (e) => {
   if (clickTime === 0) {
     clickTime = new Date().getTime();
-    console.log(clickTime);
   } else {
     if (new Date().getTime() - clickTime < 800) {
       createHeart(e);
@@ -20,6 +19,7 @@ loveMe.addEventListener("click", (e) => {
 const createHeart = (e) => {
   const heart = document.createElement("i");
   heart.classList.add("fas");
+  heart.classList.add("red");
   heart.classList.add("fa-heart");
 
   const x = e.clientX;
@@ -30,5 +30,8 @@ const createHeart = (e) => {
 
   const xIn = x - leftOff;
   const yIn = y - topOff;
-  console.log(xIn, yIn);
+
+  heart.style.top = `${yIn}px`;
+  heart.style.top = `${xIn}px`;
+  loveMe.appendChild(heart);
 };
