@@ -2,7 +2,7 @@ const loveMe = document.querySelector(".loveMe");
 const times = document.querySelector("#times");
 // console.log(loveMe);
 let clickTime = 0;
-
+let timesClicked = 0;
 loveMe.addEventListener("click", (e) => {
   if (clickTime === 0) {
     clickTime = new Date().getTime();
@@ -34,4 +34,9 @@ const createHeart = (e) => {
   heart.style.top = `${yIn}px`;
   heart.style.top = `${xIn}px`;
   loveMe.appendChild(heart);
+  times.innerHTML = ++timesClicked;
+
+  setTimeout(() => {
+    heart.remove();
+  }, 1000);
 };
